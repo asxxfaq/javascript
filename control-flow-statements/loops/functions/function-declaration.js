@@ -16,4 +16,4 @@ greet("Ashwin");
 //2-named function-function declaration must have function name
 //3-global or local scope- 
 //if defined outside any block,its globally scoped. 
-//if inside a block,locally scoped  
+//if inside a block,locally scoped

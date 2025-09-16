@@ -7,11 +7,11 @@ for (let i = 0; i <= 5; i++) {
 
 }
 //pyramid
-for (let i = 0; i <= 5; i++) {
+for (let i = 0; i <= 30; i++) {
     let row = "";
 
 
-    for (let s = 1; s <= 5 - i; s++) {
+    for (let s = 1; s <= 30 - i; s++) {
         row += " ";
     }
 
