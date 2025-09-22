@@ -12,3 +12,18 @@
 
 //await- await causes the function execution until a form is resolved(or rejected)
 // it makes asynchronous look and behave late synchronous code
+function fetchData(){
+    return new Promise((resolve)=> {
+        setTimeout(()=> {
+            resolve("data loaded")
+        },2000)
+        })
+    }
+async function getData() {
+    console.log("start");
+    const result = await fetchData();
+    console.log(result);
+    console.log("end");   
+}
+getData();
+

@@ -1,0 +1,1 @@
+the rest parameter syntax(...)- allows a function to accept an infinity number of arguments as an array 
