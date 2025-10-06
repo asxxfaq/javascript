@@ -15,7 +15,6 @@
             .then(response => response.json())
             .then(data => {
                 const userList = document.getElementById('post');
-
                 data.slice(0, 5).forEach(usr => {
                     const li = document.createElement("li");
                     li.textContent = `# ${usr.name} - ${usr.email}`;
@@ -24,12 +23,6 @@
                 );
             })
             .catch(error => console.log("error fetching datas:", error))
-
-
-
-
-
-
     </script>
 </body>
 

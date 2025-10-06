@@ -1,0 +1,10 @@
+Event is an action or occurance that happens to the browser
+
+what is event handler?
+event handling means writing a js code that will run when a specific event occurs
+
+multiple ways to handle the event
+
+1- Inline Event handling
+2- Using DOM properties
+3- 
