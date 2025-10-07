@@ -7,4 +7,4 @@ multiple ways to handle the event
 
 1- Inline Event handling
 2- Using DOM properties
-3- 
+3- Using Add event listner
