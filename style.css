@@ -1,0 +1,265 @@
+A S X ⛰️, [20-10-2025 18:40]
+/* Basic Reset and Global Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Use a modern font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Background gradient to match the image */
+    background: linear-gradient(135deg, #4b0082, #800080, #c8a2c8);
+}
+
+/* --- Form Container and Header Styling --- */
+
+.registration-container {
+    width: 100%;
+    max-width: 600px; /* Max width for the form box */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures header corners are inside */
+}
+
+.form-header {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h1 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.registration-form {
+    padding: 0 40px 40px;
+}
+
+/* --- Form Group Styling (Label + Input) --- */
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; /* Vertically align label and input/field */
+}
+
+.form-group label {
+    width: 150px; /* Fixed width for labels */
+    flex-shrink: 0;
+    font-size: 0.9em;
+    color: #555555;
+    text-align: right;
+    padding-right: 20px;
+}
+
+/* Styles for all text inputs and select */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+.styled-select {
+    flex-grow: 1; /* Take up remaining space */
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-color: #f7f7f7;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    height: 40px; /* Uniform height */
+}
+
+input:focus, .styled-select:focus {
+    outline: none;
+    border-color: #8a2be2; /* Purple focus color */
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.2);
+}
+
+/* Dropdown specific styling */
+.styled-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px; /* Space for the custom arrow */
+}
+
+/* --- Multi-part Input Styling (Name, Phone) --- */
+
+.input-row {
+    display: flex;
+    flex-grow: 1;
+    gap: 10px; /* Space between input fields */
+}
+
+.input-pair {
+    flex-basis: 50%; /* Each pair takes up half the width */
+}
+
+.input-pair input {
+    width: 100%;
+    margin-top: 5px;
+    height: 40px;
+}
+
+.input-pair:last-child {
+    margin-right: 0;
+}
+
+/* Adjusting placeholders for smaller text below the fields */
+.name-group .input-pair input::placeholder {
+    font-size: 0.8em;
+    color: #aaaaaa;
+    text-align: center;
+}
+
+/* Phone Group specific width adjustments */
+.phone-group .input-row {
+    max-width: 300px; /* Constraint width for phone inputs */
+}
+
+.phone-group .area-code {
+    flex-basis: 35%; /* Area code is smaller */
+}
+
+.phone-group .phone-number {
+    flex-basis: 65%; /* Phone number is larger */
+}
+
+/* --- Radio Button Styling (Existing Customer) --- */
+
+.radio-group {
+    align-items: flex-start; /* Align with the top of the 'p' tag */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.radio-group p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555555;
+    width: 150px; /* Match label width */
+    text-align: right;
+    padding-right: 20px;
+}
+
+.radio-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1em;
+    color: #333333;
+}
+
+.radio-label input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.custom-radio {
+    display: inline-block;
+    width: 16px;
+height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-right: 8px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+/* Style for the custom radio button when checked */
+.radio-label input[type="radio"]:checked + .custom-radio {
+    border-color: #8a2be2; /* Purple ring */
+    background-color: #ffffff;
+}
+
+/* Inner green dot for checked state */
+.radio-label input[type="radio"]:checked + .custom-radio::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #5cb85c; /* Green dot */
+}
+
+/* --- Register Button Styling --- */
+
+.register-button {
+    display: block;
+    margin-left: 170px; /* Align button with the start of the input fields */
+    width: 180px;
+    padding: 12px 20px;
+    background-color: #e54050; /* Red color from the image */
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 10px rgba(229, 64, 80, 0.4);
+}
+
+.register-button:hover {
+    background-color: #d13040; /* Slightly darker red on hover */
+    transform: translateY(-1px);
+}
+
+.register-button:active {
+    transform: translateY(1px);
+}
+
+/* --- Media Query for Responsiveness --- */
+
+@media (max-width: 768px) {
+    .registration-container {
+        margin: 20px;
+    }
+
+    .registration-form {
+        padding: 0 20px 20px;
+    }
+
+    .form-group {
+        flex-direction: column; /* Stack label and input vertically */
+        align-items: flex-start;
+    }
+
+    .form-group label,
+    .radio-group p {
+        width: 100%;
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .register-button {
+        margin-left: 0; /* Center button or align left */
+        width: 100%;
+    }
+    
+    .input-row {
+        width: 100%;
+    }
+
+    .phone-group .input-row {
+        max-width: 100%;
+    }
+}

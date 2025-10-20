@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4b0082, #800080, #c8a2c8);
+        }
+
+        .registration-container {
+            width: 100%;
+            max-width: 600px;
+            /* Max width for the form box */
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            /* Ensures header corners are inside */
+        }
+
+        .form-header {
+            background-color: #222222;
+            color: #ffffff;
+            padding: 5px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .registration-form {
+            padding: 0 40px 40px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        .styled-select {
+            flex-grow: 1;
+            /* Take up remaining space */
+            padding: 10px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
+            /* Include padding and border in the element's total width and height */
+            background-color: #f7f7f7;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            height: 30px;
+            /* Uniform height */
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .register-button {
+            display: block;
+            margin-left: 170px;
+            /* Align button with the start of the input fields */
+            width: 180px;
+            padding: 12px 20px;
+            background-color: #e54050;
+            /* Red color from the image */
+            color: white;
+            font-size: 1.1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            box-shadow: 0 4px 10px rgba(229, 64, 80, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="registration-container">
+        <header class="form-header">
+            <h2>EVENT REGISTRATION FORM</h2>
+        </header>
+        <form id="myform" class="registration-form" onsubmit="return validateForm()">
+            <label for="name">Name </label>
+            <input type="text" id="name" placeholder="First Name">
+            <input type="text" id="name" placeholder="Last Name">
+            <span class="error" id="nameError"></span> <br><br>
+            <label for="company">Company </label>
+            <input type="text" id="companyName" placeholder="">
+            <span class="error" id="companyError"></span> <br><br>
+            <label for="Email">Email </label>
+            <input type="email" id="email" placeholder="example@gmail.com">
+            <span class="error" id="emailError"></span><br><br>
+            <label for="Phone"> Phone </label>
+            <input type="text" id="phone" placeholder="Area Code">
+            <input type="tel" id="phoneno" placeholder="Phone Number">
+            <span class="error" id="phoneError"></span><br><br>
+            <label for="Subject"> Subject </label>
+            <select name="chooseOption" id="chooseOption">Choose Option
+                <option value="chooseOption">Choose Option</option>
+            </select>
+            <span class="error" id="subjectError"></span><br><br>
+            <label for="radio">Are you an existing Customer? </label> <br><br>
+            <label for="yes">yes</label>
+            <input type="radio" placeholder="yes">
+            <label for="no">no</label>
+            <input type="radio" placeholder="no"> <br><br>
+            <button type="submit" class="register-button"> Register</button>
+        </form>
+    </div>
+    </div>
+    <script>
+        function validateForm() {
+            //clear previous errors
+            document.getElementById("nameError").innerText = "";
+            document.getElementById("companyError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("phoneError").innerText = "";
+
+            let isValid = true;
+            const name = document.getElementById("name").value.trim();
+            if (name === "") {
+                document.getElementById("nameError").innerHTML = "Name is Required";
+                isValid = false;
+            }
+            const company = document.getElementById("name").value.trim();
+            if (company === ""){
+                document.getElementById("companyError").innerHTML = "The field is Required"
+                isValid = false;
+            }
+            const email = document.getElementById("email").value.trim();
+            const emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailpattern.test(email)) {
+                document.getElementById("emailError").innerHTML = "invalid email pattern";
+                isValid = false;
+            }
+            const phone = document.getElementById("phone").value.trim();
+            const phonenopattern = /^[6-9]\d{9}$/;
+            if (!phonenopattern.test(phone)) {
+                document.getElementById("phoneError").innerHTML = "Phone no must be 10 digit";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+
+</html>
