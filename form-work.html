@@ -106,14 +106,15 @@
             <span class="error" id="phoneError"></span><br><br>
             <label for="Subject"> Subject </label>
             <select name="chooseOption" id="chooseOption">Choose Option
-                <option value="chooseOption">Choose Option</option>
+                <option value="">Choose Option</option>
+                <option value="obc">OBC</option>
             </select>
             <span class="error" id="subjectError"></span><br><br>
             <label for="radio">Are you an existing Customer? </label> <br><br>
             <label for="yes">yes</label>
-            <input type="radio" placeholder="yes">
+            <input type="radio" name="is-customer" value="yes">
             <label for="no">no</label>
-            <input type="radio" placeholder="no"> <br><br>
+            <input type="radio" name="is-customer" value="no"> <br><br>
             <button type="submit" class="register-button"> Register</button>
         </form>
     </div>
@@ -133,7 +134,7 @@
                 isValid = false;
             }
             const company = document.getElementById("name").value.trim();
-            if (company === ""){
+            if (company === "") {
                 document.getElementById("companyError").innerHTML = "The field is Required"
                 isValid = false;
             }
@@ -143,7 +144,7 @@
                 document.getElementById("emailError").innerHTML = "invalid email pattern";
                 isValid = false;
             }
-            const phone = document.getElementById("phone").value.trim();
+            const phone = document.getElementById("phoneno").value.trim();
             const phonenopattern = /^[6-9]\d{9}$/;
             if (!phonenopattern.test(phone)) {
                 document.getElementById("phoneError").innerHTML = "Phone no must be 10 digit";
@@ -153,6 +154,25 @@
             return isValid;
         }
     </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+ 
+    <script>
+        //initializing email js
+        (function () {
+          emailjs.init("SIl8R64ubD65ssrXB") //publickey
+        })();
+    
+        //handle form submit
+        document.getElementById("myform").addEventListener("submit", function (event) {
+          event.preventDefault();
+          emailjs.sendForm("service_lwqa3xq", "template_nw5i3cg", this)
+            .then(function () {
+              alert("message send sucessfully")
+            }, function (error) {
+              alert("Failed to send messages")
+            })
+        });
+      </script>
 </body>
 
 </html>

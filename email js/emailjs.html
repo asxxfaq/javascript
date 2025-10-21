@@ -88,8 +88,7 @@
       <button type="submit">Send Message</button>
     </form>
   </div>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     //initializing email js
     (function () {
@@ -97,11 +96,11 @@
     })();
 
     //handle form submit
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
+    document.getElementById("Contact-form").addEventListener("submit", function (event) {
       event.preventDefault();
-      emailjs.sendForm("service_lwqa3xq", "template_dtpmfsq", this)
+      emailjs.sendForm("service_lwqa3xq", "template_7jyqvah", this)
         .then(function () {
-          alert("message send suucessfully")
+          alert("message send sucessfully")
         }, function (error) {
           alert("Failed to send messages")
         })
