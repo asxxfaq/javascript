@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Audio Seeked</h2>
+   <audio id="seeked" controls>
+    <source src="./WhatsApp Audio 2025-10-13 at 13.01.29_0a0b67a7.mp3" type="audio/mp3">
+   </audio> 
+   <p id="timeOutput">Current time: 0</p>
+
+   <script>
+    const seeked = document.getElementById('seeked');
+    const output = document.getElementById('timeOutput');
+
+    seeked.addEventListener('seeked', () => {
+        timeOutput.textContent = `Current: seeked`;
+    });
+</script>
+
+</body>
+</html>

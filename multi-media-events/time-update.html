@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <audio id="audioTimeUpdate" controls>
+        <source src="./WhatsApp Audio 2025-10-13 at 13.01.29_0a0b67a7.mp3" type="audio/mp3">
+        <!-- browser n support cheyan  -->
+    </audio>
+    <p id="timeOutput">Current time: 0</p>
+
+    <script>
+        const audioTimeUpdate = document.getElementById('audioTimeUpdate');
+        const output = document.getElementById('timeOutput');
+
+        audioTimeUpdate.addEventListener('timeupdate', () => {
+            timeOutput.textContent = `Current time: ${audioTimeUpdate.currentTime.toFixed(2)}`;
+        });
+    </script>
+</body>
+
+</html>
